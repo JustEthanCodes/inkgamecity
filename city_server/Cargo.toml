@@ -1,0 +1,22 @@
+[package]
+name = "city_server"
+description = "City Floorlines — headless dedicated-sim runner (replays, soak tests, divergence gossip)."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "cityfloorlines-server"
+path = "src/main.rs"
+
+[dependencies]
+city_core = { workspace = true }
+city_sim = { workspace = true }
+city_net = { workspace = true }
+bevy_app = { workspace = true }
+bevy_ecs = { workspace = true }
+bevy_time = { workspace = true }
+
+[lints]
+workspace = true

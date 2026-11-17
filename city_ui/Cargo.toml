@@ -1,0 +1,15 @@
+[package]
+name = "city_ui"
+description = "City Floorlines: HUD, heatmaps, widgets (Feathers), god-mode panel. Thin shell for Phase 1."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+city_core = { workspace = true }
+bevy_app = { workspace = true }
+bevy_ecs = { workspace = true }
+
+[lints]
+workspace = true

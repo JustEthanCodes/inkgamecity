@@ -1,0 +1,18 @@
+[package]
+name = "city_io"
+description = "City Floorlines: chunked, checksummed, versioned save/load; RON descriptor pipeline (mods)."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+serde = { workspace = true }
+bincode = { workspace = true }
+zstd = { workspace = true }
+crc32fast = { workspace = true }
+ron = { workspace = true }
+thiserror = { workspace = true }
+
+[lints]
+workspace = true

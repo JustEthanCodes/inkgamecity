@@ -1,0 +1,17 @@
+[package]
+name = "city_terrain"
+description = "City Floorlines: heightfield terrain, procedural generation, road cut-and-fill blending."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+city_core = { workspace = true }
+glam = { workspace = true }
+noise = { workspace = true }
+rayon = { workspace = true }
+serde = { workspace = true }
+
+[lints]
+workspace = true

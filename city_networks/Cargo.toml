@@ -1,0 +1,15 @@
+[package]
+name = "city_networks"
+description = "City Floorlines: spline network model, CSR directed graph, congestion-aware pathfinding. Engine-free."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+glam = { workspace = true }
+serde = { workspace = true }
+serde-big-array = { workspace = true }
+
+[lints]
+workspace = true

@@ -1,0 +1,59 @@
+# City Floorlines — open city-building sandbox inspired by classic city-builders.
+# Workspace root. See README.md for crate map and implementation status.
+[workspace]
+resolver = "3"
+members = [
+    "crates/city_core",
+    "crates/city_networks",
+    "crates/city_io",
+    "crates/city_terrain",
+    "crates/city_sim",
+    "crates/city_render",
+    "crates/city_ui",
+    "crates/city_net",
+    "crates/city_app",
+    "crates/city_server",
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "Proprietary"
+publish = false
+
+[workspace.dependencies]
+glam = { version = "0.30", features = ["serde", "bytemuck"] }
+serde = { version = "1", features = ["derive"] }
+serde-big-array = "0.5"
+smallvec = { version = "1", features = ["serde"] }
+rustc-hash = "2"
+noise = "0.9"
+rayon = "1"
+bincode = { version = "2", features = ["serde"] }
+zstd = "0.13"
+crc32fast = "1"
+ron = "0.10"
+thiserror = "2"
+
+# Engine (pinned — bump deliberately, never float)
+bevy_app = { version = "0.20.0", default-features = false }
+bevy_ecs = { version = "0.20.0", default-features = false }
+bevy_time = { version = "0.20.0", default-features = false }
+
+city_core = { path = "crates/city_core" }
+city_networks = { path = "crates/city_networks" }
+city_terrain = { path = "crates/city_terrain" }
+city_sim = { path = "crates/city_sim" }
+city_render = { path = "crates/city_render" }
+city_ui = { path = "crates/city_ui" }
+city_net = { path = "crates/city_net" }
+
+[workspace.lints.rust]
+unused_must_use = "deny"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+
+[profile.release]
+lto = "thin"
+codegen-units = 8

@@ -1,0 +1,21 @@
+[package]
+name = "city_sim"
+description = "City Floorlines: ECS simulation (clock, multi-rate buckets, intents, municipal state). Compiles headless (no render deps)."
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+city_core = { workspace = true }
+bevy_app = { workspace = true }
+bevy_ecs = { workspace = true }
+glam = { workspace = true }
+smallvec = { workspace = true }
+serde = { workspace = true }
+
+[features]
+default = []
+
+[lints]
+workspace = true
